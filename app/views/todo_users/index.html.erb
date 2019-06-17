@@ -1,0 +1,15 @@
+<table class="table">
+    <% @todo_users.each do |todo_users|%>
+      <tr>
+        <td> <%= todo_users.todo.name %> </td>
+        <td> <%= todo_users.todo.description %> </td>
+        <td> <%= todo_users.todo.photo %> </td>
+        <td> <%= todo_users.completed %> </td>
+      </tr>
+<% end %>
+      <tr>
+        <td> Total: </td>
+        <td> <%= @todo_users.map{|todo_users| todo_users.todo}.count %> </td>
+      </tr>
+</table>
+

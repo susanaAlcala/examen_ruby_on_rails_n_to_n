@@ -1,0 +1,19 @@
+<h1>Todos#index</h1>
+
+<% @todos.each_slice(3) do |todo| %>
+<div class='row'>
+    <% @todos.each do |todo| %>
+        <div class='card'style="width: 18rem;"> 
+        <%= image_tag todo.photo, class: 'card-img-top' %>
+            <div class="card-body">
+            <h5 class="card-title"><%= todo.name %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= todo.description %></h6>
+            <%= button_to  "Completed!", todo_todo_users_path(todo), class: 'btn btn-primary' %>
+            <%= button_to  "Incompleted!", todo_incomplete_todo_path(todo), class: 'btn btn-warning' %>
+            
+            </div>
+        </div>
+    <% end %>
+    </div>
+<% end %>
+

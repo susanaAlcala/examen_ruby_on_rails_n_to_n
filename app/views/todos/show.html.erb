@@ -1,10 +1,13 @@
+<ul>
+  <li> <%= @todo.name %> </li>
+  <li> <%= @todo.description %> </li>
+  <li> <%= @todo.photo %> </li>
+</ul>
+<br>
+<br>
 
-<%= @todo.name %>
-<%= @todo.description %>
-<%= @todo.photo %>
-
-<h2> Usuarios que han realizado esta tarea </h2>
-
+<h4> Usuarios que han realizado esta tarea </h4>
+<br>
 <% @users.each do |user|%>
     <% if TodoUser.find_by(todo_id: @todo.id, user_id: user.id).completed %>
     <br>

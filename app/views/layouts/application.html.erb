@@ -26,11 +26,11 @@
         <a class="nav-link" href="<%= todos_path%>"> Home <span class="sr-only">(current)</span></a>
       </li>
   
-      <li class="nav-item">
-        <a class="nav-link" href="<%= todo_users_path %>">Tareas completadas</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="<%= todo_users_path %>">Tareas completadas: <%= @todo_users.map{|todo_users| todo_users.todo}.count %></a>
       </li>
     
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right ">
         <% if user_signed_in? %>
           <li> <a href="<%= destroy_user_session_path %>" data-method='delete'> Salir </a></li>
         <% else %>

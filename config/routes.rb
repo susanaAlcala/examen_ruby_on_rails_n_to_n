@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'todo_users/create'
-  resources :todos, only: :index do
+  #get 'todo_users/create'
+  #resources 'todo/:id', to: 'todo#show', as: 'show_todo'
+  resources :todos, only: [:show, :index] do
     resources :todo_users, only: [:index, :create]
+    post 'complete/', to:'todo_users#complete', as: 'complete_todo'  
     post 'incomplete/', to:'todo_users#incomplete', as: 'incomplete_todo'  
   end
  

@@ -1,0 +1,14 @@
+<%= @todo.name %>
+<%= @todo.description %>
+<%= @todo.photo %>
+
+<h2> Usuarios que han realizado esta tarea </h2>
+
+<% @users.each do |user|%>
+    <% if TodoUser.find_by(todo_id: @todo.id, user_id: user.id).completed %>
+      <%= user.email %>
+    
+    <% end %>
+<% end %>
+
+

@@ -1,4 +1,5 @@
 class TodosController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_todo, only: [:show]
   
   

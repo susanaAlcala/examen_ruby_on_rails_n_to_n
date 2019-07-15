@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   #get 'todo_users/create'
+  get 'todo_users/conteo', to: 'todo_users#conteo'
   #resources 'todo/:id', to: 'todo#show', as: 'show_todo'
   resources :todos, only: [:show, :index] do
     resources :todo_users, only: [:index, :create]

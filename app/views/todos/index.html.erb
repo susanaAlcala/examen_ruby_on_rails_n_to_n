@@ -1,4 +1,4 @@
-<h1>Todos#index</h1>
+<h1>Tareas</h1>
 
 <% @todos.each_slice(3) do |todo| %>
 <div class='row'>
@@ -8,8 +8,11 @@
             <div class="card-body">
             <h5 class="card-title"><%= todo.name %></h5>
             <h6 class="card-subtitle mb-2 text-muted"><%= todo.description %></h6>
-            <%= button_to  "Completed!", todo_complete_todo_path(todo), class: 'btn btn-primary' %>
-            <%= button_to  "Incompleted!", todo_incomplete_todo_path(todo), class: 'btn btn-warning' %>
+            <%# if todo.complete == true %>
+                <%= button_to  "Incompleted!", todo_incomplete_todo_path(todo), class: 'btn btn-warning' %>
+            <%# else %>
+                <%= button_to  "Completed!", todo_complete_todo_path(todo), class: 'btn btn-primary' %> 
+            <%# end %>
             <td><%= link_to "Detalles", todo_path(todo) %></td>
             </div>
         </div>

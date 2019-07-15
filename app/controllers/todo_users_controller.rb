@@ -28,7 +28,6 @@ class TodoUsersController < ApplicationController
     redirect_to todos_path
   end
 
-
   def incomplete
     todo = Todo.find(params[:todo_id])
     todo_user = current_user.todo_users.find_by(todo_id: todo)
